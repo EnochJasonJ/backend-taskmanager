@@ -28,7 +28,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.0.255','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['https://backend-taskmanager-5aqf.onrender.com/','192.168.0.255','localhost','127.0.0.1']
 
 
 # Application definition
