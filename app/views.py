@@ -8,6 +8,12 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
+from django.http import JsonResponse
+
+def home_view(request):
+    return JsonResponse({"message": "Backend is running!"})
+
 # Create your views here.
 
 class list_tasks(ListAPIView):
