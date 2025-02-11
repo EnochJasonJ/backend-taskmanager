@@ -20,6 +20,11 @@ def test_db(request):
         return JsonResponse({"status": "Database is connected!"})
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
+    
+def list_users(request):
+    users = list(User.objects.values("username"))
+    return JsonResponse({"users": users})
+
 
 def home_view(request):
     return JsonResponse({"message": "Backend is running!"})
