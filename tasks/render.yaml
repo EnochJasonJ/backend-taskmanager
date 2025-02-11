@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: backend-taskmanager
+    env: python
+    buildCommand: |
+      python manage.py migrate
+    startCommand: gunicorn tasks.wsgi:application
