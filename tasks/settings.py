@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['backend-taskmanager-5aqf.onrender.com','192.168.0.255','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['backend-taskmanager-5aqf.onrender.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://backend-taskmanager-5aqf.onrender.com']
 
@@ -151,6 +151,8 @@ CORS_ALLOW_CREDENTIALS = True  # Allow cookies and authentication headers
 CORS_ALLOWED_ORIGINS = [       # Explicitly allow your frontend
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://task-manager-r9a2crowq-enoch-jason-j.vercel.app",
+    "https://backend-taskmanager-5aqf.onrender.com"
 ]
 CORS_ALLOW_METHODS = [         # Allow specific HTTP methods
     "GET",
