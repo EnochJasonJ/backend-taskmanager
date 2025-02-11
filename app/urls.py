@@ -3,7 +3,7 @@ from .views import list_tasks, create_tasks, update_tasks, delete_tasks, retrive
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
-    path("", home_view, name="home"),  # Add this line
+    path("", list_tasks.as_view(), name="list_tasks"),  # Add this line
     path("list-tasks/", list_tasks.as_view(), name="list_tasks"),
     path("create-tasks/", create_tasks.as_view(), name="create_tasks"),
     path("update-tasks/<int:pk>/", update_tasks.as_view(), name="update_tasks"),
