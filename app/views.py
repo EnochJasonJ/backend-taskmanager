@@ -37,7 +37,7 @@ def list_users(request):
     return JsonResponse({"users": users})
 
 
-def TaskAnalyticsView(APIView):
+class TaskAnalyticsView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self,request):
