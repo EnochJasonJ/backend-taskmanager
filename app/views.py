@@ -11,6 +11,16 @@ from rest_framework.views import APIView
 
 from django.http import JsonResponse
 
+from django.db import connection
+
+def test_db(request):
+    try:
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT 1")  # Simple DB check
+        return JsonResponse({"status": "Database is connected!"})
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)
+
 def home_view(request):
     return JsonResponse({"message": "Backend is running!"})
 
