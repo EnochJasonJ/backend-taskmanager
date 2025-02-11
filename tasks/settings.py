@@ -151,7 +151,7 @@ CORS_ALLOW_CREDENTIALS = True  # Allow cookies and authentication headers
 CORS_ALLOWED_ORIGINS = [       # Explicitly allow your frontend
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://task-manager-r9a2crowq-enoch-jason-j.vercel.app",
+    "https://task-manager-ch7klk51x-enoch-jason-j.vercel.app",
     "https://backend-taskmanager-5aqf.onrender.com"
 ]
 CORS_ALLOW_METHODS = [         # Allow specific HTTP methods
