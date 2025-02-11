@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import list_tasks, create_tasks, update_tasks, delete_tasks, retrive_tasks, RegisterView, home_view, test_db, list_users,run_migrations
+from .views import list_tasks, create_tasks, update_tasks, delete_tasks, retrive_tasks, RegisterView, home_view, test_db, list_users,run_migrations, task_analytics
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
@@ -15,4 +15,5 @@ urlpatterns = [
     path("token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),  # Login
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("register/", RegisterView.as_view(), name="register"),
+    path('task-analytics/', task_analytics, name='task-analytics'),
 ]
