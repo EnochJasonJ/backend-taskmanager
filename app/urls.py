@@ -5,7 +5,6 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 urlpatterns = [
     path("test-db/", test_db, name="test_db"),
     path("list-users/", list_users, name="list_users"),
-    path("create-superuser/", create_superuser_view),
     path('run-migrations/', run_migrations),
     path("", list_tasks.as_view(), name="list_tasks"),  # Add this line
     path("list-tasks/", list_tasks.as_view(), name="list_tasks"),

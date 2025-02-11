@@ -15,15 +15,6 @@ from django.contrib.auth import get_user_model
 
 from django.db import connection
 
-def create_superuser_view(request):
-    User = get_user_model()
-    username = "jesus"
-    password = "Jesus123"
-
-    if not User.objects.filter(username=username).exists():
-        User.objects.create_superuser(username, password)
-        return HttpResponse("Superuser created successfully!")
-    return HttpResponse("Superuser already exists!")
 
 def run_migrations(request):
     try:
