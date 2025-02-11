@@ -75,6 +75,9 @@ class update_tasks(UpdateAPIView):
     
     def get_object(self):
         return get_object_or_404(TaskModel, pk=self.kwargs['pk'], user=self.request.user)
+    
+    def perform_update(self, serializer):
+        serializer.save(user=self.request.user)
 
 class delete_tasks(DestroyAPIView):
     queryset = TaskModel.objects.all()

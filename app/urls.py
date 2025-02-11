@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import list_tasks, create_tasks, update_tasks, delete_tasks, retrive_tasks, RegisterView, home_view, test_db, list_users,run_migrations,create_superuser_view
+from .views import list_tasks, create_tasks, update_tasks, delete_tasks, retrive_tasks, RegisterView, home_view, test_db, list_users,run_migrations
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
