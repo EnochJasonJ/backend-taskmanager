@@ -1,11 +1,11 @@
 from django.urls import path
-from .views import list_tasks, create_tasks, update_tasks, delete_tasks, retrive_tasks, RegisterView, home_view, test_db, list_users
+from .views import list_tasks, create_tasks, update_tasks, delete_tasks, retrive_tasks, RegisterView, home_view, test_db, list_users,run_migrations
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
     path("test-db/", test_db, name="test_db"),
     path("list-users/", list_users, name="list_users"),
-
+    path('run-migrations/', run_migrations),
     path("", list_tasks.as_view(), name="list_tasks"),  # Add this line
     path("list-tasks/", list_tasks.as_view(), name="list_tasks"),
     path("create-tasks/", create_tasks.as_view(), name="create_tasks"),
