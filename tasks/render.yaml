@@ -3,5 +3,6 @@ services:
     name: backend-taskmanager
     env: python
     buildCommand: |
-      python manage.py migrate
+      python manage.py makemigrations
+      python manage.py migrate --noinput
     startCommand: gunicorn tasks.wsgi:application
