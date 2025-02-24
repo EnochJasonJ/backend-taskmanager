@@ -37,21 +37,21 @@ def list_users(request):
     return JsonResponse({"users": users})
 
 
-# class TaskAnalyticsView(APIView):
-#     permission_classes = [AllowAny]
+class TaskAnalyticsView(APIView):
+    permission_classes = [AllowAny]
 
-#     def get(self,request):
-#         total_tasks = TaskModel.objects.filter(user=request.user).count()
-#         completed_tasks = TaskModel.objects.filter(user=request.user, is_completed=True).count()
-#         not_completed_tasks = total_tasks - completed_tasks
-#         completion_percentage = 0 if total_tasks == 0 else (completed_tasks / total_tasks) * 100
+    def get(self,request):
+        total_tasks = TaskModel.objects.filter(user=request.user).count()
+        completed_tasks = TaskModel.objects.filter(user=request.user, is_completed=True).count()
+        not_completed_tasks = total_tasks - completed_tasks
+        completion_percentage = 0 if total_tasks == 0 else (completed_tasks / total_tasks) * 100
 
-#         return Response({
-#             "total_tasks": total_tasks,
-#             "completed_tasks": completed_tasks,
-#             "not_completed_tasks": not_completed_tasks,
-#             "completion_percentage": completion_percentage
-#         })
+        return Response({
+            "total_tasks": total_tasks,
+            "completed_tasks": completed_tasks,
+            "not_completed_tasks": not_completed_tasks,
+            "completion_percentage": completion_percentage
+        })
 
 def home_view(request):
     return JsonResponse({"message": "Backend is running!"})
