@@ -91,17 +91,12 @@ if DATABASE_URL:
         'default': dj_database_url.config(default=DATABASE_URL)
     }
 else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'taskapp',
-            'USER': 'taskuser',
-            'PASSWORD': 'admin123',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
-    }
-
+   DATABASES = {
+    'default': dj_database_url.parse(
+        "postgresql://postgres.nmcmmxuaqufegueupypm:Task@123sece$@aws-0-ap-south-1.pooler.supabase.com:6543/postgres"
+        # "postgresql://postgres.nmcmmxuaqufegueupypm:[Task@123sece$]]@aws-0-ap-south-1.pooler.supabase.com:5432/postgres"
+    )
+}
 
 
 # Password validation
